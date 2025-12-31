@@ -9,9 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@fontsource/days-one": "^5.2.7",
+    "@fontsource/lato": "^5.2.7",
+    "countup.js": "^2.9.0",
+    "lucide-react": "^0.562.0",
     "next": "16.1.1",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-icons": "^5.5.0",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^12.0.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
