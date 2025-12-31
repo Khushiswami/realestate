@@ -80,7 +80,7 @@ export default function Viewproperty() {
   ];
 
   const [index, setIndex] = useState(0);
-  const [perView, setPerView] = useState(2); // default 2 cards
+  const [perView, setPerView] = useState(1); // default 2 cards
 
   const gap = 24; // gap in px
 

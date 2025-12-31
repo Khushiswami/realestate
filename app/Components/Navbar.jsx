@@ -1,398 +1,3 @@
-// // "use client";
-
-// // import { useState } from "react";
-// // import Link from "next/link";
-// // const cities = [
-// //   "New Delhi",
-// //   "Mumbai",
-// //   "Bangalore",
-// //   "Pune",
-// //   "Hyderabad",
-// //   "Chennai",
-// //   "Kolkata",
-// //   "Ahmedabad",
-// //   "Indore",
-// //   "Jaipur",
-// // ];
-
-// // export default function Navbar() {
-// //   const [open, setOpen] = useState(false);
-// //   const [cityOpen, setCityOpen] = useState(false);
-// //   const [selectedCity, setSelectedCity] = useState("All India");
-
-// //   return (
-// //     <header className="border-b bg-white sticky top-0 z-50">
-// //       <div className="max-w-7xl mx-auto px-4">
-// //         {/* Top Bar */}
-// //         <div className="flex items-center justify-between h-16">
-// //           {/* Left */}
-// //           <div className="flex items-center gap-6 relative">
-// //             <h1 className="text-2xl font-bold text-[#550000]">
-// //               Vinayaka Estate
-// //             </h1>
-
-// //             {/* Location Selector */}
-// //             <div
-// //               className="relative hidden md:block"
-// //               onMouseEnter={() => setCityOpen(true)}
-// //               onMouseLeave={() => setCityOpen(false)}
-// //             >
-// //               <button className="text-sm text-gray-600 font-medium">
-// //                 {selectedCity} ▾
-// //               </button>
-
-// //               {cityOpen && (
-// //                 <div className="absolute top-8 left-0 bg-white shadow-lg rounded-lg w-56 p-3">
-// //                   <p className="text-xs text-gray-500 mb-2">Popular Cities</p>
-// //                   <ul className="text-sm text-gray-700 space-y-1">
-// //                     {cities.map((city) => (
-// //                       <li
-// //                         key={city}
-// //                         onClick={() => {
-// //                           setSelectedCity(city);
-// //                           setCityOpen(false);
-// //                         }}
-// //                         className="cursor-pointer hover:text-[#550000]"
-// //                       >
-// //                         {city}
-// //                       </li>
-// //                     ))}
-// //                   </ul>
-// //                 </div>
-// //               )}
-// //             </div>
-// //           </div>
-
-// //           {/* Desktop Menu */}
-// //           <nav className="hidden md:flex items-center gap-6">
-// //             <button className=" btn-primary bg-[#550000] text-white px-4 py-2  text-sm">
-// //               Post Property
-// //             </button>
-
-// //             {/* Mega Menu */}
-// //             <div
-// //               className="relative"
-// //               onMouseEnter={() => setOpen(true)}
-// //               onMouseLeave={() => setOpen(false)}
-// //             >
-// //               <button className="text-sm font-medium text-[#550000]">
-// //                 Property Services ▾
-// //               </button>
-
-// //               {open && (
-// //                 <div className="absolute left-1/2 -translate-x-1/2 top-10 w-[1000px] bg-white shadow-xl rounded-xl p-6 grid grid-cols-3 gap-6">
-// //                   {/* Buy */}
-// //                   <div>
-// //                     <h3 className="font-semibold mb-3">
-// //                       Buy Property in India
-// //                     </h3>
-// //                     <ul className="space-y-2 text-sm text-gray-600">
-// //                       <li>
-// //                         <Link
-// //                           href="/property/buy"
-// //                           className="hover:text-[#550000]"
-// //                         >
-// //                           Flats for Sale
-// //                         </Link>
-// //                       </li>{" "}
-// //                       <li>Independent Houses</li>
-// //                       <li>Residential Plots</li>
-// //                       <li>Luxury Properties</li>
-// //                       <li>NRI Properties</li>
-// //                       <li className="text-[#550000]">
-// //                         Submit Property Requirement
-// //                       </li>
-// //                     </ul>
-// //                   </div>
-
-// //                   {/* Rent */}
-// //                   <div>
-// //                     <h3 className="font-semibold mb-3">
-// //                       Rent Property in India
-// //                     </h3>
-// //                     <ul className="space-y-2 text-sm text-gray-600">
-// //                       <li>Flats for Rent</li>
-// //                       <li>Independent Houses</li>
-// //                       <li>PG / Co-living</li>
-// //                       <li>Commercial Rentals</li>
-// //                       <li className="text-[#550000]">
-// //                         Submit Rental Requirement
-// //                       </li>
-// //                     </ul>
-
-// //                     <div className="mt-4 p-4 bg-cyan-100 rounded-lg text-sm">
-// //                       <p className="font-semibold">Hot Deals</p>
-// //                       <p className="text-gray-600">
-// //                         Exclusive offers across India
-// //                       </p>
-// //                     </div>
-// //                   </div>
-
-// //                   {/* Sell */}
-// //                   <div>
-// //                     <h3 className="font-semibold mb-3">
-// //                       Sell / Rent Your Property
-// //                     </h3>
-// //                     <ul className="space-y-2 text-sm text-gray-600">
-// //                       <li>Post Property for FREE</li>
-// //                       <li>
-// //                         Buy Seller Plans{" "}
-// //                         <span className="text-[#550000]">upto 50% off</span>
-// //                       </li>
-// //                       <li>Property Valuation</li>
-// //                     </ul>
-
-// //                     <h3 className="font-semibold mt-4 mb-2">
-// //                       Real Estate Resources
-// //                     </h3>
-// //                     <ul className="space-y-2 text-sm text-gray-600">
-// //                       <li>Home Buying Guide</li>
-// //                       <li>Home Loan Assistance</li>
-// //                       <li>Interior Design Ideas</li>
-// //                       <li>Real Estate News</li>
-// //                     </ul>
-// //                   </div>
-// //                 </div>
-// //               )}
-// //             </div>
-
-// //             <button className=" btn-primary border px-4 py-1.5 rounded text-sm">
-// //               Login
-// //             </button>
-// //             <button className="btn-primary px-4 py-1.5 rounded text-sm">
-// //               Sign Up
-// //             </button>
-// //           </nav>
-
-// //           {/* Mobile Menu Button */}
-// //           <button className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
-// //             ☰
-// //           </button>
-// //         </div>
-// //       </div>
-// //     </header>
-// //   );
-// // }
-// "use client";
-
-// import { useState } from "react";
-// import Link from "next/link";
-
-// const cities = [
-//   "New Delhi",
-//   "Mumbai",
-//   "Bangalore",
-//   "Pune",
-//   "Hyderabad",
-//   "Chennai",
-//   "Kolkata",
-//   "Ahmedabad",
-//   "Indore",
-//   "Jaipur",
-// ];
-
-// export default function Navbar() {
-//   const [desktopMegaOpen, setDesktopMegaOpen] = useState(false);
-//   const [cityOpen, setCityOpen] = useState(false);
-//   const [mobileOpen, setMobileOpen] = useState(false);
-//   const [selectedCity, setSelectedCity] = useState("All India");
-
-//   return (
-//     <header className="border-b bg-white sticky top-0 z-50">
-//       <div className="max-w-7xl mx-auto px-4">
-//         {/* ================= TOP BAR ================= */}
-//         <div className="h-16 flex items-center justify-between">
-//           {/* ===== MOBILE HEADER ===== */}
-//           <div className="flex md:hidden w-full items-center justify-between">
-//             {/* LEFT: MENU */}
-//             <button
-//               className="text-2xl"
-//               onClick={() => setMobileOpen(!mobileOpen)}
-//             >
-//               ☰
-//             </button>
-
-//             {/* CENTER: LOGO */}
-//             <h1 className="text-lg font-bold text-[#550000]">
-//               Vinayaka Estate
-//             </h1>
-
-//             {/* RIGHT: POST PROPERTY */}
-//             <button className="bg-[#550000] text-white px-3 py-1.5 text-sm rounded">
-//               Post Property
-//             </button>
-//           </div>
-
-//           {/* ===== DESKTOP HEADER ===== */}
-//           <div className="hidden md:flex w-full items-center justify-between">
-//             {/* LEFT */}
-//             <div className="flex items-center gap-6">
-//               <h1 className="text-2xl font-bold text-[#550000]">
-//                 Vinayaka Estate
-//               </h1>
-
-//               {/* CITY SELECTOR */}
-//               <div
-//                 className="relative"
-//                 onMouseEnter={() => setCityOpen(true)}
-//                 onMouseLeave={() => setCityOpen(false)}
-//               >
-//                 <button className="text-sm text-gray-600 font-medium">
-//                   {selectedCity} ▾
-//                 </button>
-
-//                 {cityOpen && (
-//                   <div className="absolute top-8 left-0 bg-white shadow-lg rounded-lg w-56 p-3">
-//                     <p className="text-xs text-gray-500 mb-2">Popular Cities</p>
-//                     <ul className="text-sm text-gray-700 space-y-1">
-//                       {cities.map((city) => (
-//                         <li
-//                           key={city}
-//                           onClick={() => {
-//                             setSelectedCity(city);
-//                             setCityOpen(false);
-//                           }}
-//                           className="cursor-pointer hover:text-[#550000]"
-//                         >
-//                           {city}
-//                         </li>
-//                       ))}
-//                     </ul>
-//                   </div>
-//                 )}
-//               </div>
-//             </div>
-
-//             {/* RIGHT MENU */}
-//             <nav className="flex items-center gap-6">
-//               <button className="bg-[#550000] text-white px-4 py-2 text-sm">
-//                 Post Property
-//               </button>
-
-//               {/* MEGA MENU */}
-//               <div
-//                 className="relative"
-//                 onMouseEnter={() => setDesktopMegaOpen(true)}
-//                 onMouseLeave={() => setDesktopMegaOpen(false)}
-//               >
-//                 <button className="text-sm font-medium text-[#550000]">
-//                   Property Services ▾
-//                 </button>
-
-//                 {desktopMegaOpen && (
-//                   <div className="absolute left-1/2 -translate-x-1/2 top-10 w-[600px] bg-white shadow-xl rounded-xl p-6 grid grid-cols-3 gap-6">
-//                     <div>
-//                       <h3 className="font-semibold mb-3">Buy</h3>
-//                       <ul className="space-y-2 text-sm text-gray-600">
-//                         <li>
-//                           <Link href="/property/buy">Flats for Sale</Link>
-//                         </li>
-//                         <li>Independent Houses</li>
-//                         <li>Residential Plots</li>
-//                         <li>Luxury Properties</li>
-//                         <li>NRI Properties</li>
-//                       </ul>
-//                     </div>
-
-//                     <div>
-//                       <h3 className="font-semibold mb-3">Rent</h3>
-//                       <ul className="space-y-2 text-sm text-gray-600">
-//                         <li>Flats for Rent</li>
-//                         <li>PG / Co-living</li>
-//                         <li>Commercial Rentals</li>
-//                       </ul>
-//                     </div>
-
-//                     <div>
-//                       <h3 className="font-semibold mb-3">Sell</h3>
-//                       <ul className="space-y-2 text-sm text-gray-600">
-//                         <li>Post Property FREE</li>
-//                         <li>Property Valuation</li>
-//                       </ul>
-//                     </div>
-//                   </div>
-//                 )}
-//               </div>
-
-//               <button className="btn-primary px-4 py-1.5 text-sm">Login</button>
-//               <button className="btn-primary px-4 py-1.5 text-sm">
-//                 Sign Up
-//               </button>
-//             </nav>
-//           </div>
-//         </div>
-
-//         {/* ================= MOBILE MENU ================= */}
-//         {mobileOpen && (
-//           <div className="md:hidden border-t py-4 space-y-4">
-//             {/* CITY */}
-//             <div>
-//               <p className="text-sm font-medium mb-2">Select City</p>
-//               <select
-//                 value={selectedCity}
-//                 onChange={(e) => setSelectedCity(e.target.value)}
-//                 className="w-full border p-2 rounded"
-//               >
-//                 <option>All India</option>
-//                 {cities.map((city) => (
-//                   <option key={city}>{city}</option>
-//                 ))}
-//               </select>
-//             </div>
-
-//             <MobileAccordion title="Buy Property">
-//               <Link href="/property/buy">Flats for Sale</Link>
-//               <div>Independent Houses</div>
-//               <div>Residential Plots</div>
-//               <div>Luxury Properties</div>
-//               <div>NRI Properties</div>
-//             </MobileAccordion>
-
-//             <MobileAccordion title="Rent Property">
-//               <div>Flats for Rent</div>
-//               <div>PG / Co-living</div>
-//               <div>Commercial Rentals</div>
-//             </MobileAccordion>
-
-//             <MobileAccordion title="Sell Property">
-//               <div>Post Property for FREE</div>
-//               <div>Property Valuation</div>
-//             </MobileAccordion>
-
-//             <button className="w-full bg-[#550000] text-white py-2 rounded">
-//               Post Property
-//             </button>
-//             <button className="w-full py-2 border rounded">Login</button>
-//             <button className="w-full py-2 rounded">Sign Up</button>
-//           </div>
-//         )}
-//       </div>
-//     </header>
-//   );
-// }
-
-// /* ========== MOBILE ACCORDION ========== */
-// function MobileAccordion({ title, children }) {
-//   const [open, setOpen] = useState(false);
-
-//   return (
-//     <div>
-//       <button
-//         onClick={() => setOpen(!open)}
-//         className="w-full flex justify-between items-center px-2 py-2 font-medium"
-//       >
-//         {title}
-//         <span>{open ? "−" : "+"}</span>
-//       </button>
-
-//       {open && (
-//         <div className="px-4 pb-3 space-y-2 text-sm text-gray-600">
-//           {children}
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
 "use client";
 
 import { useState } from "react";
@@ -457,11 +62,8 @@ export default function Navbar() {
     <>
       <header className="border-b bg-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4">
-          {/* ================= TOP BAR ================= */}
           <div className="h-16 flex items-center justify-between">
-            {/* ===== MOBILE HEADER ===== */}
             <div className="flex md:hidden w-full items-center justify-between">
-              {/* LEFT: MENU */}
               <button
                 className="text-2xl"
                 onClick={() => setMobileOpen(!mobileOpen)}
@@ -469,26 +71,21 @@ export default function Navbar() {
                 ☰
               </button>
 
-              {/* CENTER: LOGO */}
               <h1 className="text-lg font-bold text-[#550000]">
                 Vinayaka Estate
               </h1>
 
-              {/* RIGHT: POST PROPERTY */}
               <button className="bg-[#550000] text-white px-3 py-1.5 text-sm rounded">
                 Post Property
               </button>
             </div>
 
-            {/* ===== DESKTOP HEADER ===== */}
             <div className="hidden md:flex w-full items-center justify-between">
-              {/* LEFT */}
               <div className="flex items-center gap-6">
                 <h1 className="text-2xl font-bold text-[#550000]">
                   Vinayaka Estate
                 </h1>
 
-                {/* CITY SELECTOR */}
                 <div
                   className="relative"
                   onMouseEnter={() => setCityOpen(true)}
@@ -522,13 +119,12 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* RIGHT MENU */}
               <nav className="flex items-center gap-6">
-                <button className="bg-[#550000] text-white px-4 py-2 text-sm">
-                  Post Property
-                </button>
-
-                {/* MEGA MENU */}
+                <Link href="/postproperty">
+                  <button className="bg-[#550000] text-white px-4 py-2 text-sm">
+                    Post Property
+                  </button>
+                </Link>
                 <div
                   className="relative"
                   onMouseEnter={() => setDesktopMegaOpen(true)}
@@ -541,10 +137,15 @@ export default function Navbar() {
                   {desktopMegaOpen && (
                     <div className="absolute left-1/2 -translate-x-1/2 top-10 w-[600px] bg-white shadow-xl rounded-xl p-6 grid grid-cols-3 gap-6">
                       <div>
-                        <h3 className="font-semibold mb-3">Buy</h3>
+                        <Link href="/property/buy">
+                          <h3 className="font-semibold mb-3 cursor-pointer hover:underline">
+                            Buy
+                          </h3>
+                        </Link>
+
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li>
-                            <Link href="/property/buy">Flats for Sale</Link>
+                            <Link href="/property/sale">Flats for Sale</Link>
                           </li>
                           <li>Independent Houses</li>
                           <li>Residential Plots</li>
@@ -554,7 +155,11 @@ export default function Navbar() {
                       </div>
 
                       <div>
-                        <h3 className="font-semibold mb-3">Rent</h3>
+                        <Link href="/property/rent">
+                          <h3 className="font-semibold mb-3 cursor-pointer hover:underline">
+                            Rent
+                          </h3>
+                        </Link>{" "}
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li>Flats for Rent</li>
                           <li>PG / Co-living</li>
@@ -563,7 +168,11 @@ export default function Navbar() {
                       </div>
 
                       <div>
-                        <h3 className="font-semibold mb-3">Sell</h3>
+                        <Link href="/property/sell">
+                          <h3 className="font-semibold mb-3 cursor-pointer hover:underline">
+                            Sell
+                          </h3>
+                        </Link>{" "}
                         <ul className="space-y-2 text-sm text-gray-600">
                           <li>Post Property FREE</li>
                           <li>Property Valuation</li>
@@ -577,7 +186,6 @@ export default function Navbar() {
                   Login
                 </button>
 
-                {/* Sign Up triggers modal */}
                 <button
                   onClick={() => setSignupOpen(true)}
                   className="btn-primary px-4 py-1.5 text-sm"
@@ -588,10 +196,8 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* ================= MOBILE MENU ================= */}
           {mobileOpen && (
             <div className="md:hidden border-t py-4 space-y-4">
-              {/* CITY */}
               <div>
                 <p className="text-sm font-medium mb-2">Select City</p>
                 <select
@@ -625,9 +231,11 @@ export default function Navbar() {
                 <div>Property Valuation</div>
               </MobileAccordion>
 
-              <button className="w-full bg-[#550000] text-white py-2 rounded">
-                Post Property
-              </button>
+              <Link href="/postproperty">
+                <button className="w-full bg-[#550000] text-white py-2 rounded">
+                  Post Property
+                </button>
+              </Link>
               <button className="w-full py-2 border rounded">Login</button>
               <button
                 onClick={() => setSignupOpen(true)}
@@ -640,7 +248,6 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* ===== SIGN UP MODAL ===== */}
       {signupOpen && (
         <div className="fixed inset-0  bg-opacity-50 flex items-center justify-center z-50 px-4">
           <div className="bg-white rounded-lg max-w-md w-full p-6 relative shadow-lg">
@@ -727,7 +334,6 @@ export default function Navbar() {
   );
 }
 
-/* ========== MOBILE ACCORDION ========== */
 function MobileAccordion({ title, children }) {
   const [open, setOpen] = useState(false);
 

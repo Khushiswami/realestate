@@ -58,9 +58,9 @@ const dummyProperties = [
   },
 ];
 
-export default function PropertyPage() {
+export default function Page() {
   const [filters, setFilters] = useState({
-    listingType: "buy",
+    listingType: "sell",
     search: "",
     budget: [],
     bhk: [],

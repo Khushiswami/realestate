@@ -19,7 +19,7 @@ const dummyProperties = [
     agentName: "Rahul Sharma",
     listingType: "buy",
 
-    image: "", // add image url if available
+    image: "",
   },
   {
     id: 2,
@@ -51,7 +51,6 @@ const dummyProperties = [
     image: "",
     agentName: "Rahul Sharma",
   },
-  // aur properties add karo
 ];
 
 export default function PropertyPage() {
@@ -68,12 +67,10 @@ export default function PropertyPage() {
   });
 
   const filteredProperties = dummyProperties.filter((item) => {
-    // BUY / RENT / SELL
     if (filters.listingType && item.listingType !== filters.listingType) {
       return false;
     }
 
-    // Search
     if (
       filters.search &&
       !item.title.toLowerCase().includes(filters.search.toLowerCase())
@@ -81,7 +78,6 @@ export default function PropertyPage() {
       return false;
     }
 
-    // Property Type
     if (
       filters.propertyType.length &&
       !filters.propertyType.some((type) =>
@@ -91,7 +87,6 @@ export default function PropertyPage() {
       return false;
     }
 
-    // BHK
     if (
       filters.bhk.length &&
       !filters.bhk.some((b) =>
@@ -101,7 +96,6 @@ export default function PropertyPage() {
       return false;
     }
 
-    // Status
     if (
       filters.moreFilters.length &&
       !filters.moreFilters.includes(item.status)
