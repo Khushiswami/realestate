@@ -84,7 +84,6 @@ export default function Filters({ filters, setFilters }) {
           />
         </div>
 
-        {/* ================= PROPERTY TYPE ================= */}
         <div className="relative">
           <button
             onClick={() => {
@@ -135,7 +134,6 @@ export default function Filters({ filters, setFilters }) {
           )}
         </div>
 
-        {/* ================= BUDGET DROPDOWN ================= */}
         <div className="relative">
           <button
             onClick={() => {

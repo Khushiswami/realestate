@@ -22,14 +22,12 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [selectedCity, setSelectedCity] = useState("All India");
 
-  // Signup Modal states
   const [signupOpen, setSignupOpen] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState("");
   const [message, setMessage] = useState("");
 
-  // Send OTP demo logic
   const sendOtp = () => {
     if (!phoneNumber.match(/^\d{10}$/)) {
       setMessage("Please enter a valid 10-digit phone number.");
@@ -46,10 +44,8 @@ export default function Navbar() {
       return;
     }
     setMessage("Phone number verified successfully!");
-    // You can close modal or do further actions here
   };
 
-  // Reset form when modal closes
   const closeModal = () => {
     setSignupOpen(false);
     setPhoneNumber("");
@@ -60,7 +56,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="border-b bg-white sticky top-0 z-50">
+      <header className=" bg-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="h-16 flex items-center justify-between">
             <div className="flex md:hidden w-full items-center justify-between">
@@ -121,21 +117,22 @@ export default function Navbar() {
 
               <nav className="flex items-center gap-6">
                 <Link href="/postproperty">
-                  <button className="bg-[#550000] text-white px-4 py-2 text-sm">
+                  <button className="bg-[#550000] rounded-md text-white px-4 py-2 text-sm">
                     Post Property
                   </button>
                 </Link>
-                <div
-                  className="relative"
-                  onMouseEnter={() => setDesktopMegaOpen(true)}
-                  onMouseLeave={() => setDesktopMegaOpen(false)}
-                >
-                  <button className="text-sm font-medium text-[#550000]">
+
+                <div className="relative">
+                  <button
+                    className="text-sm font-medium text-[#550000]"
+                    onClick={() => setDesktopMegaOpen((prev) => !prev)}
+                  >
                     Property Services ▾
                   </button>
 
                   {desktopMegaOpen && (
-                    <div className="absolute left-1/2 -translate-x-1/2 top-10 w-[600px] bg-white shadow-xl rounded-xl p-6 grid grid-cols-3 gap-6">
+                    <div className="absolute left-1/2 -translate-x-1/1 top-10 w-[600px] bg-white shadow-xl rounded-xl p-6 grid grid-cols-3 gap-6">
+                      {" "}
                       <div>
                         <Link href="/property/buy">
                           <h3 className="font-semibold mb-3 cursor-pointer hover:underline">
@@ -153,7 +150,6 @@ export default function Navbar() {
                           <li>NRI Properties</li>
                         </ul>
                       </div>
-
                       <div>
                         <Link href="/property/rent">
                           <h3 className="font-semibold mb-3 cursor-pointer hover:underline">
@@ -166,7 +162,6 @@ export default function Navbar() {
                           <li>Commercial Rentals</li>
                         </ul>
                       </div>
-
                       <div>
                         <Link href="/property/sell">
                           <h3 className="font-semibold mb-3 cursor-pointer hover:underline">
@@ -250,22 +245,24 @@ export default function Navbar() {
 
       {signupOpen && (
         <div className="fixed inset-0  bg-opacity-50 flex items-center justify-center z-50 px-4">
-          <div className="bg-white rounded-lg max-w-md w-full p-6 relative shadow-lg">
+          <div className="bg-[#ed8e8e] rounded-lg max-w-md  w-full md:w-70 p-6 relative shadow-lg">
             <button
-              className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+              className="absolute top-2 right-2 text-white hover:text-gray-900"
               onClick={closeModal}
               aria-label="Close"
             >
               ✕
             </button>
 
-            <h2 className="text-2xl font-semibold mb-6 text-center">Sign Up</h2>
+            <h2 className="text-2xl text-white font-semibold mb-5 text-center">
+              Sign Up
+            </h2>
 
             {!otpSent ? (
               <>
                 <label
                   htmlFor="phone"
-                  className="block text-gray-700 font-medium mb-2"
+                  className="block text-white font-medium mb-1"
                 >
                   Enter your phone number
                 </label>
@@ -275,13 +272,13 @@ export default function Navbar() {
                   placeholder="Enter 10-digit phone number"
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 mb-4"
+                  className="w-full px-4 py-1 border bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-[#ed8e8e] mb-4"
                   maxLength={10}
                 />
 
                 <button
                   onClick={sendOtp}
-                  className="w-full bg-[#550000] hover:bg-teal-700 text-white py-2 rounded-md font-semibold transition"
+                  className="w-full bg-white hover:bg-[#ed8e8e] text-black py-1 rounded-md font-semibold transition"
                 >
                   Send OTP
                 </button>
@@ -300,13 +297,13 @@ export default function Navbar() {
                   placeholder="6-digit OTP"
                   value={otp}
                   onChange={(e) => setOtp(e.target.value)}
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 mb-4"
+                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#ed8e8e] mb-4"
                   maxLength={6}
                 />
 
                 <button
                   onClick={verifyOtp}
-                  className="w-full bg-[#550000] hover:bg-teal-700 text-white py-2 rounded-md font-semibold transition"
+                  className="w-full bg-[#550000] hover:bg-[#ed8e8e] text-white py-2 rounded-md font-semibold transition"
                 >
                   Verify OTP
                 </button>
@@ -317,7 +314,7 @@ export default function Navbar() {
                     setOtp("");
                     setMessage("");
                   }}
-                  className="mt-4 w-full text-center text-sm text-gray-600 underline hover:text-teal-600"
+                  className="mt-4 w-full text-center text-sm text-gray-600 underline hover:text-[#ed8e8e]"
                 >
                   Edit phone number
                 </button>

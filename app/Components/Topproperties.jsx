@@ -113,15 +113,13 @@ export default function Topproperties() {
     <section className="relative w-full px-4 md:px-20 py-12 overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-semibold">Fresh Properties in Indore</h2>
+        <h2 className="text-2xl font-semibold"> Properties in Indore</h2>
         <span className="flex items-center gap-2 text-[#550000] font-semibold cursor-pointer hover:text-[#ed8e8e]">
           See all Properties →
         </span>
       </div>
 
-      {/* Slider */}
       <div className="relative">
-        {/* Prev Arrow */}
         <button
           onClick={() => scroll("left")}
           aria-label="Previous"
@@ -132,7 +130,6 @@ export default function Topproperties() {
           <FiChevronLeft size={22} />
         </button>
 
-        {/* Cards */}
         <div
           ref={sliderRef}
           className="flex gap-5 overflow-x-auto scroll-smooth no-scrollbar"
@@ -165,8 +162,8 @@ export default function Topproperties() {
                 <p
                   className={`text-xs mt-2 font-semibold ${
                     item.status === "Ready to Move"
-                      ? "text-green-600"
-                      : "text-[#550000"
+                      ? "text-[#550000]"
+                      : "text-[#550000]"
                   }`}
                 >
                   {item.status}
